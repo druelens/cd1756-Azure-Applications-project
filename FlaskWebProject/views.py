@@ -70,7 +70,7 @@ def login():
             app.logger.error('Authentication error')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
-        app.logger.info('Successful login')
+        app.logger.info('Successful login: ' + user.username)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home')
@@ -84,7 +84,6 @@ def authorized():
     if request.args.get('state') != session.get("state"):
         return redirect(url_for("home"))  # No-OP. Goes back to Index page
     if "error" in request.args:  # Authentication/Authorization failure
-        app.logger.error('Authentication error: ' + request.args.get("error"))
         return render_template("auth_error.html", result=request.args)
     if request.args.get('code'):
         cache = _load_cache()
@@ -93,7 +92,6 @@ def authorized():
             scopes=Config.SCOPE,
             redirect_uri=url_for('authorized', _external=True, _scheme='https'))
         if "error" in result:
-            app.logger.error('Authentication error: ' + result.get("error"))
             return render_template("auth_error.html", result=result)
         session["user"] = result.get("id_token_claims")
         app.logger.info('Successful login')
