@@ -1,0 +1,75 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "openmrsdemo.ch9qumksoho5.eu-west-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "demo-iris",
+            "database": "openmrs",
+            "username": "openmrs_demo",
+            "password": "~ut8QA~ppRD7"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "solidarityloadtest.ch9qumksoho5.eu-west-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "demo-mdacs",
+            "database": "openmrs",
+            "username": "openmrs",
+            "password": "OpenMRS@2015"
+        },
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": false
+                }
+            },
+            "previewLimit": 50,
+            "server": "saxpress-dev.cqscnz7r8hcs.eu-west-1.rds.amazonaws.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "saxpress-dev",
+            "database": "saxpress",
+            "username": "test_reader",
+            "password": "testDBUser1"
+        },
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": false
+                }
+            },
+            "previewLimit": 50,
+            "server": "saxpress-stg.cqscnz7r8hcs.eu-west-1.rds.amazonaws.com",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "saxpress-stg",
+            "database": "saxpress",
+            "username": "root",
+            "password": "MasterUserPassword"
+        },
+        {
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": true
+            },
+            "previewLimit": 50,
+            "server": "cd1756.database.windows.net",
+            "port": 1433,
+            "driver": "MSSQL",
+            "name": "cd1756-cms",
+            "database": "cms",
+            "username": "druelens",
+            "password": "tkdwn3JnJ"
+        }
+    ]
+}
